@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  php-test:
+    image: php:7.2-apache
+    volumes:
+      - ./php:/var/www/html
+    container_name: php-test
+    networks:
+      - test-network
+    ports:
+      - 5000:80
+  # nodejs-test:
+  #   container_name: nodejs-test
+  #   build:
+  #     context: ./nodejs
+  #   network:
+  #     - test-network
+
+networks:
+  test-network:
